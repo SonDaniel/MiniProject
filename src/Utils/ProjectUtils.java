@@ -1,6 +1,6 @@
 package Utils;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectUtils {
@@ -12,22 +12,12 @@ public class ProjectUtils {
      * @return A List with the strings separated by the delimiter
      */
     public List convertStringToList(String sourceString, char delimiter) {
-        List<String> storageList = new LinkedList<>();
-        String storageString = "";
-        for(int ii = 0; ii < sourceString.length(); ii++) {
-            if (sourceString.charAt(ii) != delimiter) {
-                storageString = storageString.concat(Character.toString(sourceString.charAt(ii)));
-                if (ii == sourceString.length() - 1) { //checks to see if last index
-                    storageList.add(storageString);
-                }
-            } else { //if delimiter found, store string
-                if (!(storageString.equals(""))) { //checks to see if any character
-                    storageList.add(storageString);
-                    storageString = ""; //reset string value
-                }
-            }
+        if (sourceString.isEmpty()) {
+            return null;
+        } else {
+            String[] storageArray = sourceString.split(Character.toString(delimiter));
+            return convertArrayToList(storageArray);
         }
-        return storageList;
     }
 
     /**
@@ -36,8 +26,8 @@ public class ProjectUtils {
      * @param sourceArray A String array that will be converted to a List
      * @return A List with the content of the String array
      */
-    public List convertArrayToList(String[] sourceArray) {
-        List<String> storageList = new LinkedList<>();
+    public List<String> convertArrayToList(String[] sourceArray) {
+        List<String> storageList = new ArrayList<>();
         for(String index : sourceArray) {
             storageList.add(index);
         }
