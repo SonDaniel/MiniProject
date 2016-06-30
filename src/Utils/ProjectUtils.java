@@ -1,6 +1,6 @@
 package Utils;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ProjectUtils {
@@ -11,7 +11,7 @@ public class ProjectUtils {
      * @param delimiter A character that determines end of string
      * @return A List with the strings separated by the delimiter
      */
-    public List convertStringToList(String sourceString, char delimiter) {
+    public List<String> convertStringToList(String sourceString, char delimiter) {
         if (sourceString.isEmpty()) {
             return null;
         } else {
@@ -27,11 +27,7 @@ public class ProjectUtils {
      * @return A List with the content of the String array
      */
     public List<String> convertArrayToList(String[] sourceArray) {
-        List<String> storageList = new ArrayList<>();
-        for(String index : sourceArray) {
-            storageList.add(index);
-        }
-        return storageList;
+        return Arrays.asList(sourceArray);
     }
 
     /**
@@ -43,11 +39,11 @@ public class ProjectUtils {
      */
     public String convertListToString(List<String> sourceList, char delimiter) {
         String storageString = null; //initialize temporary string
-        for(Object list : sourceList) {
+        for(String list : sourceList) {
             if (storageString == null) { //initialize storageString with value
-                storageString = list.toString();
+                storageString = list;
             } else { //concat string and delimiter
-                storageString = storageString.concat(Character.toString(delimiter)).concat(list.toString());
+                storageString = storageString.concat(Character.toString(delimiter)).concat(list);
             }
         }
         return storageString;
