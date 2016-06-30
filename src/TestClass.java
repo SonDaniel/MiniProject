@@ -1,8 +1,6 @@
 import Utils.ProjectUtils;
-import java.util.InputMismatchException;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+
+import java.util.*;
 
 public class TestClass {
 
@@ -118,7 +116,7 @@ public class TestClass {
     }
 
     public static void choice3() {
-        List<String> tester = new LinkedList<>();
+        List<String> tester = new ArrayList<>();
         char testDelimiter= ' ';
         tester.add("This");
         tester.add("is");

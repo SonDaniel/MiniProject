@@ -41,7 +41,7 @@ public class ProjectUtils {
      * @param delimiter A character that separates each string
      * @return A String of the concatenated List using a delimiter
      */
-    public String convertListToString(List sourceList, char delimiter) {
+    public String convertListToString(List<String> sourceList, char delimiter) {
         String storageString = null; //initialize temporary string
         for(Object list : sourceList) {
             if (storageString == null) { //initialize storageString with value
