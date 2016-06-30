@@ -70,10 +70,10 @@ public class TestClass {
             System.out.print("DELIMITER: ");
             char testDelimiter = input.nextLine().charAt(0);
 
-            List testList = utils.convertStringToList(testString, testDelimiter);
+            List<String> testList = utils.convertStringToList(testString, testDelimiter);
 
             System.out.println("RESULT: ");
-            for(Object item : testList) {
+            for(String item : testList) {
                 System.out.println(item);
             }
         } catch (InputMismatchException ex) {
@@ -90,15 +90,17 @@ public class TestClass {
 
         String[] testArray = {"daniel", "david", "you"};
         String[] testArray2 = {null, "daniel", "david"};
+        String[] testArray3 = {null};
+
         System.out.print("CONTENT OF ARRAY: ");
         for(String string : testArray) {
             System.out.print(string + " ");
         }
         System.out.println("");
         System.out.println("RESULT:");
-        List testerList = utils.convertArrayToList(testArray);
+        List<String> testerList = utils.convertArrayToList(testArray);
 
-        for(Object item : testerList) {
+        for(String item : testerList) {
             System.out.println(item);
         }
 
@@ -108,26 +110,80 @@ public class TestClass {
         }
         System.out.println("");
         System.out.println("RESULT:");
-        List testerList2 = utils.convertArrayToList(testArray2);
+        List<String> testerList2 = utils.convertArrayToList(testArray2);
 
-        for(Object item : testerList2) {
+        for(String item : testerList2) {
             System.out.println(item);
         }
+
+        System.out.print("CONTENT OF ARRAY3: ");
+        for(String string : testArray3) {
+            System.out.print(string + " ");
+        }
+        System.out.println("");
+        System.out.println("RESULT:");
+        List<String> testerList3 = utils.convertArrayToList(testArray3);
+
+        for(String item : testerList3) {
+            System.out.println(item);
+        }
+
     }
 
     public static void choice3() {
-        List<String> tester = new ArrayList<>();
         char testDelimiter= ' ';
-        tester.add("This");
-        tester.add("is");
-        System.out.println("CONTENT OF LIST:");
-        for(Object item : tester) {
+        List<String> tester1 = new ArrayList<>();
+        tester1.add("This");
+        tester1.add("is");
+        tester1.add("a");
+        tester1.add("test");
+        List<String> tester2 = new ArrayList<>();
+        tester2.add("This");
+
+        List<String> tester3 = new ArrayList<>();
+        tester3.add(null);
+        tester3.add("is");
+        tester3.add("a");
+        tester3.add("test");
+
+        List<String> tester4 = new ArrayList<>();
+        tester4.add(null);
+
+        System.out.println("CONTENT OF LIST1:");
+        for(String item : tester1) {
             System.out.println(item);
         }
-        String resultString = utils.convertListToString(tester, testDelimiter);
+        String resultString1 = utils.convertListToString(tester1, testDelimiter);
 
         System.out.println("RESULTS:");
-        System.out.println(resultString);
+        System.out.println(resultString1);
+
+        System.out.println("CONTENT OF LIST2:");
+        for(String item : tester2) {
+            System.out.println(item);
+        }
+        String resultString2 = utils.convertListToString(tester2, testDelimiter);
+
+        System.out.println("RESULTS:");
+        System.out.println(resultString2);
+
+        System.out.println("CONTENT OF LIST3:");
+        for(String item : tester3) {
+            System.out.println(item);
+        }
+        String resultString3 = utils.convertListToString(tester3, testDelimiter);
+
+        System.out.println("RESULTS:");
+        System.out.println(resultString3);
+
+        System.out.println("CONTENT OF LIST4:");
+        for(String item : tester4) {
+            System.out.println(item);
+        }
+        String resultString4 = utils.convertListToString(tester4, testDelimiter);
+
+        System.out.println("RESULTS:");
+        System.out.println(resultString4);
     }
 
 }
