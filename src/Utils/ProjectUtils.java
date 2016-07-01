@@ -38,11 +38,11 @@ public class ProjectUtils {
      * @return A String of the concatenated List using a delimiter
      */
     public String convertListToString(List<String> sourceList, char delimiter) {
-        String storageString = null; //initialize temporary string
+        String storageString = null;
         for(String list : sourceList) {
-            if (storageString == null) { //initialize storageString with value
+            if (storageString == null) {
                 storageString = list;
-            } else { //concat string and delimiter
+            } else {
                 storageString = storageString.concat(Character.toString(delimiter)).concat(list);
             }
         }
